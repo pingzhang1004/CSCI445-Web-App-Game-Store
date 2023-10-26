@@ -1,0 +1,33 @@
+Hard-coded product list： I probably stored the product name as the value for each select option in previou code I offered to you something like:
+ <option value="product1" data-image="puzzle_Mermaid.png">Product 1 - $9.99</option>
+
+Now that we have loaded data in the database tables in previou code I offered to you, update my store.php page to remove the ugly hard-coded product list according the following instructions:
+
+instructions for Populating the Dropdown:use my result from the database query(database.php )to update the options in the <select> field in store.php page. 
+Specifically, you should:
+
+(1)update the value for each option. As mentioned above, we want to use the product id - NOT the product name - as the option's value.
+(2)update the text displayed to the user. So in teachers's example, it use the product_name, pieces, and price to create a text string to display.
+What about the image? We'll deal with that in Part 3. For now, you can comment out the showImage code, and just test that the correct text is displayed for each drop-down option.
+HINT: I used the shortcut syntax <?= [PHP] ?> quite a bit. Your approach may vary.
+
+
+Update Unit3_process_order.php 
+
+(1)If the customer exists (assume email will be unique), display a message to welcome them back (your wording may vary). If the customer does not exist, display an appropriate message for a new customer and add the customer to the database.
+(2)Use the price from the database (tax rate may still be hard-coded; in a production environment this type of info would probably be in a company table of some sort)
+(3)Add an order to the ORDERS table.
+(4)Update the quantity available in the PRODUCTS table (ensure the quantity does not go below 0. For now, if it would be less than 0, just set the quantity to 0. As mentioned, we will address the UI for this in a future lab).
+(5)Display a message that includes the customers email (see figure for a possibility)
+(6)Update the CSS so the receipt is more visually appealing (your style may vary)
+
+
+
+Update the quantity available in the PRODUCTS table (in the Unit3_process_order.php file) using the functions ( in Unit3_database.php)
+(1)ensure the quantity dos not go below 0. For now, if it would be less than 0, just set the quantity to 0. 
+(2)As mentioned, we will address the UI for this in a future lab.
+
+(2)Update Unit3_process_order.php Add an order to the ORDERS table. 
+
+
+NOTE: How will you know if records are actually being added? This is a good use for your admin function (e.g., phpMyAdmin or the MySQL command prompt).0

@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color:#e8fac3;    
+}
+
+h1 {
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+p{
+    margin-left: 10px;
+}
+
+.customers, .orders, .products {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border-bottom: blue solid 2px;
+}
+
+table {
+    width: 80%;
+    margin-left: 10px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 8px 12px;
+    text-align: left;
+}
