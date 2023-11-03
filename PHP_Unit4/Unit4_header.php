@@ -4,17 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Unit3_common.css">
+    <link rel="stylesheet" href="Unit4_common.css">
     <title>The Puzzle and Game Store</title>
 </head>
 <body>
     
 <!-- Navigation Bar -->
 <nav>
-    <a href="#" class="nav-item">Home</a>
-    <a href="#" class="nav-item">Puzzles</a>
-    <a href="#" class="nav-item">Games</a>
-    <a href="Unit3_admin.php" class="nav-admin">Admin</a>
+    <a href="Unit4_store.php" class="nav-item">Store</a>
+    <a href="Unit4_order_entry.php" class="nav-item">Order Entry</a>
+    <a href="Unit4_admin.php" class="nav-admin">Admin</a>
     <!-- Add more links as needed -->
 </nav>
 
