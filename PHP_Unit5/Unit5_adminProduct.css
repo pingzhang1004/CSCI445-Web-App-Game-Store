@@ -1,0 +1,141 @@
+Create two columns using flexbox
+* {
+    box-sizing: border-box;
+}
+
+.grid-container {
+    display: flex;
+}
+
+.main-comtent {
+    flex: 50%;
+    padding: 5px;
+    height: 600px; /* Should be removed. Only for demonstration */
+    float:left;
+}
+
+.Puzzle-form-display{
+    flex: 50%;
+    border: 3px solid #059ec9;
+    border-radius: 25px 25px 25px 25px;
+    padding: 25px;
+    margin: 25px 50px 25px 50px;
+    height: 600px; /* Should be removed. Only for demonstration */
+}
+
+form {
+    margin: 10px 0;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 10px 5px;
+    margin-bottom: 2px;
+}
+
+legend {
+    font-weight: bold;
+    background-color:#306497;
+    color: white;
+    padding: 1px;
+}
+p {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+
+label, input {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 1px 1px 1px;
+    box-sizing: border-box;
+}
+
+input[type="radio"] {
+    width: auto;
+}
+
+button {
+    width: 15%;
+    background-color: #306497;
+    border-radius: 10px 10px 10px 10px;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    margin: 5px 5px 5px 5px;
+    text-align: center;
+}
+
+input[type="submit"]:hover {
+    background-color: #ee5017;
+}
+
+
+/* Indicator for required fields */
+.required::after {
+    content: " *";
+    color: red;
+}
+
+input[type="reset"] {
+    width: 30%;
+    background-color: red;
+    border-radius: 5px 5px 5px 5px;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+#errorMessages{
+    height: 60px;
+    color: red;
+    margin-top: 10px;
+}
+
+#Puzzles_display {
+    height: 150px; /* Set a fixed height */
+    overflow-y: auto; /* Add vertical scrollbar when needed */
+  }  
+
+.puzzleTable {
+    border-collapse: collapse;  
+    width: 100%;  
+    border: 1px solid black;  
+}
+
+.puzzleTable th, td {
+    border: 1px solid black; 
+    padding: 8px; 
+    text-align: left;  
+}
+  
+.highlighted {
+    background-color: yellow;
+}
+
+.checkbox-label,
+.checkbox-input {
+    width: 20%;
+  display: inline-block; /* Make elements inline-block */
+  vertical-align: middle; /* Vertically align to the middle */
+}
+
+.checkbox-label {
+  margin-right: 10px; /* Or any space you want between label and checkbox */
+}
+
+
+#deleteButton {
+    /* Styling for delete button */
+    background-color: red;
+    color: white;
+    /* Other styling */
+  }
+
+  .error-messages p {
+    color: red;
+    margin: 10px 0;
+    font-weight: bold;
+}
