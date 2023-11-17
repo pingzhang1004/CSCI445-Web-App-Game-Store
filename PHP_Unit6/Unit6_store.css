@@ -1,0 +1,90 @@
+Create two columns using flexbox
+* {
+    box-sizing: border-box;
+}
+
+.grid-container {
+    display: flex;
+}
+
+.main-comtent {
+    flex: 50%;
+    padding: 5px;
+    height: 600px; /* Should be removed. Only for demonstration */
+}
+
+.image-display{
+    flex: 50%;
+    border: 3px solid #059ec9;
+    border-radius: 25px 25px 25px 25px;
+    padding: 25px;
+    margin: 25px 50px 25px 50px;
+    height: 600px; /* Should be removed. Only for demonstration */
+}
+
+form {
+    margin: 10px 0;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 10px 5px;
+    margin-bottom: 2px;
+}
+
+legend {
+    font-weight: bold;
+    background-color:#306497;
+    color: white;
+    padding: 1px;
+}
+p {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+
+label, input, select {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 1px 1px 1px;
+    box-sizing: border-box;
+}
+
+input[type="radio"] {
+    width: auto;
+}
+
+input[type="submit"] {
+    width: 30%;
+    background-color: #306497;
+    border-radius: 5px 5px 5px 5px;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+input[type="submit"]:hover {
+    background-color: #ee5017;
+}
+
+#imageDiv img {
+    max-width: 90%;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Indicator for required fields */
+.required::after {
+    content: " *";
+    color: red;
+}
+
+#stockMessage {
+    margin-top: 20px;
+    color: red;
+    text-size-adjust: 40px;
+    text-align: center;
+    font-weight: bold;
+}

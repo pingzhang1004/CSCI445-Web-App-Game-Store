@@ -4,19 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=" Unit5_store.css">
-    <link rel="stylesheet" href="Unit5_common.css">
+    <link rel="stylesheet" href=" Unit6_store.css">
+    <link rel="stylesheet" href="Unit6_common.css">
     <title>The Puzzle and Game Store</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="Unit6_script.js"></script>
 </head>
 <body>
 
-<?php include 'Unit5_header.php';?>
-<?php include 'Unit5_database.php';?>
+<?php include 'Unit6_header.php';?>
+<?php include 'Unit6_database.php';?>
 <?php date_default_timezone_set("America/Denver");?>
 
 <div class="grid-container">
     <div class="main-comtent" id="content">
-        <form action="Unit5_process_order.php" method="post" onchange="updateImage()">
+        <form action="Unit6_process_order.php" method="post">
             <!-- Personal Information Fieldset -->
             <input type="hidden" name="orderTimestamp" value="<?php echo time(); ?>">
             <fieldset>
@@ -35,7 +37,8 @@
             <fieldset>
                 <legend>Product Info</legend>
                 <label class="required" for="product">Select a product:</label>
-                <select id="product" name="product" required onchange="updateMaxQuantity()">
+                
+                <select id="product" name="product" required onchange="updateImage(); updateMaxQuantity(); trackViewedItem(this.value)">
                     <option value="" disabled selected>Select a puzzle</option>
                     <?php foreach($allPuzzles as $puzzle): ?>
                         <?php if (!$puzzle['inactive']): // Check if the product is not marked as inactive ?>
@@ -82,56 +85,8 @@
     </div>  
 </div> 
 
-<script>
-    function updateImage() {
-        let productDropdown = document.getElementById('product');
-        let selectedOption = productDropdown.options[productDropdown.selectedIndex];
-        let imagePath = 'Images/' + selectedOption.getAttribute('data-image-name');
-        let imgElem = document.getElementById('puzzleImage');
-        
-        // New element to display stock message
-        let stockMessageElem = document.getElementById('stockMessage'); 
-        // Getting the stock quantity as an integer
-        let inStock = parseInt(selectedOption.getAttribute('data-in-stock'), 10); 
-
-        if (selectedOption.value !== '') {
-            imgElem.src = imagePath;
-            imgElem.style.display = 'block';
-
-            // Stock message logic
-            if (inStock === 0) {
-                stockMessageElem.textContent = "SOLD OUT";
-            } else if (inStock < 5) {
-                stockMessageElem.textContent = `Only ${inStock} left!`;
-            } else {
-                stockMessageElem.textContent = ""; // Clearing the message if there's plenty of stock
-            }
-
-        } else {
-            imgElem.style.display = 'none';
-        }
-    }
-
-    function updateMaxQuantity() {
-        var selectedProduct = document.getElementById('product').selectedOptions[0];
-        var maxStock = selectedProduct.getAttribute('data-in-stock');
-        let product_quantity = document.getElementById('quantity');
-        product_quantity.value = '1';  // 在这里显式地设置数量为1
-
-        if (maxStock > 0) {
-            product_quantity.setAttribute('max', maxStock);
-            product_quantity.setAttribute('min', '1');
-        }
-        else {
-            product_quantity.setAttribute('max', maxStock);
-            product_quantity.setAttribute('min', maxStock);
-            product_quantity.value = '0';  // 如果库存为0，设置数量为0
-        }
-    }
-</script>
-
 <?php
-include 'Unit_footer.php';
+include 'Unit6_footer.php';
 ?>
 
 </body>

@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e8fac3;
+    margin: 0;
+    padding: 0;
+}
+
+
+nav a:hover {
+    background-color:  #265f98;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navigation bar */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align nav items to the left */
+    background-color: #059ec9;
+    color: #ffffff;
+    padding: 10px 0;
+}
+
+/* Nav item styling */
+nav a.nav-item {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    position: relative; /* Needed for absolute positioning of the pseudo-element */
+}
+
+/* Vertical line after each nav item except the last one */
+nav a.nav-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    height: 60%; /* Adjust the height of the line as needed */
+    width: 1px;
+    background-color: #ffffff; /* Color of the line */
+}
+
+/* Logout link styling */
+nav a.nav-logout {
+    margin-left: auto;
+    padding: 10px 15px;
+    /* No vertical line for logout, so no ::after pseudo-element */
+}
+
+
+header {
+    position: relative;
+    background-color:  #c3eefa;
+    color: #265f98;
+    overflow: auto;
+    padding: 10px 10px;
+}
+
+header h1, h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+
+.welcome-message {
+    position: absolute;
+    right: 10px;
+    top: 50px;
+    padding: 25px 25px;
+    border: 1px dotted #265f98;
+    background: #eaf1f8;
+    z-index: 1000;
+}
+
+
+footer {
+    background-color: #c3eefa;
+    color:black;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 10px;
+}
+
